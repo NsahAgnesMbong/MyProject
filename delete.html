@@ -1,0 +1,27 @@
+<!Doctype html>
+<html lang="en">
+    <meta charset="utf-8">
+    <head>
+        <title>delet account</title>
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA">
+        <link href="./css/bootstrap.min.css"rel="stylesheet">
+        <script src="./js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <form action="delete.php"method="POST">
+            <div class="card col-md-6 p-4 mx-auto my-5 shadow">
+                <div class="head">
+                    <h1 class="text-center">DELETE ACCOUNT</h1>
+                </div>
+                <div class="card-body">
+                    <label for="name"class="p-2"><b>NAME:</b></label>
+                    <input class="p-2" type="text"name="name"id="name"placeholder="enter your username">
+                    <label for="password"class="p-2"><b>PASSWORD:</b></label>
+                    <input type="text"id="password"name="password"placeholder="enter your password"class="p-2">
+                    <input type="submit"value="SUBMIT"class="p-2">
+                </div>
+            </div>
+        </form> 
+    </body>
+</html>
