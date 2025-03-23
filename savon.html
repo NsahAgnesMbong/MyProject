@@ -22,13 +22,111 @@
             max-width:100%;
             height:130px;
         }
+        *{
+        margin:0;
+        padding:0;
+        list-style:none;
+        text-decoration:none;
+    }
+    .logo h1{
+        width:25%;
+        margin-left:5%;
+        margin-top:5%;
+        color:white;
+        font-weight:bold;
+
+    }
+    h1{
+        width:75%;
+        margin-left:15%;
+        margin-top:10%;
+        color:purple;
+        font-weight:bold;
+
+    }
+ 
+    h2{
+        margin-left:35%;
+    }
+  
+    button{
+        margin-top:10%;
+    }
+.logo img{
+    width:80px;
+    height:80px;
+    border-radius:40px;
+}
+.navbar,footer {
+    background: linear-gradient(to right,purple,blue);
+    padding: 1rem 1.5rem;
+    position:sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.9);
+    align-items: center;
+
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+
+nav ul{
+ list-style-type:none;
+ margin:0;
+ padding: 0;
+display: flex;
+justify-content:space-evenly;
+align-items:center;
+ }
+ nav ul li{
+    /*margin-top:-80px;*/
+    margin-right:5%;
+    animation:glow ease-in-out 3s infinite;
+ }
+ @keyframes glow {
+    from {
+        text-shadow: 0 2px 5px orange, 0 0 10px #fff, 0 0 15px #0073e6;
+    }
+    to {
+        text-shadow: 0 0 10px orangered, 0 0 20px pink, 0 0 30px #0073e6;
+    }
+}
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.navbar .logo span {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+       
+    </style>
     </style>
 </head>
 <body>
-    <div class="nav navbar">
-        <li class="nav-item"><a href="home.html">HOME</a></li>     <li class="cart-quantity">3</li>
-        <div class="cart-text">Cart</div>
-    </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="home.html"><img src="/images/8.png"alt='a pic'></a><span><h1>STEPHBEAUTY</h1></span>
+            </div>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">DASHBORD</a></li>
+                <li><a href="#">PROFILE</a></li>
+
+            </ul>
+        </nav>
+    </header>
     <form action=""method="post">
         <div class="container-fluid bg-white  text-black shadow">
             <div class="row">
@@ -39,7 +137,14 @@
             </div>
         <div class="row"id="page-content"></div>
         </div>
+        <p class="text-center">
+            <button class="btn btn-danger js-add-to-cart" ><a href="cart.html">VIEW CART</a></button></p>
     </form> 
-    <script type="module" src="./scripts/darkskinsavon.js"></script> 
+    <script type="module"src="./scripts/darkskinsavon.js"></script> 
+    <footer>
+        <div class="content text-center text-white">
+            <p>&copy copy right<br>Design by NSAH AGNES<br>a.k.a  IT girl</p>
+        </div>
+        </footer>
 </body>
 </html>

@@ -1,10 +1,11 @@
-import {cart} from "./scripts/cart.js";
+//import {cart,addToCart} from "./scripts/cart.js";
 const savonProducts=[{
     id:"10s",
     image:"images/image(6).jpeg.jpg",
     name:"GIRLFRIEND",
     text:"good for both dark anf light skin people",
     price:15
+
 },{
 id:"11s",
 image:"images/image(8).jpeg.jpg",
@@ -56,18 +57,13 @@ savonProducts.forEach((product)=>{
                 </div>`
 });
 console.log(pageContent.innerHTML =savonHTML);
-document.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click",()=>{
-        console.log(button.dataset);
-    });
-});
 document.querySelectorAll(".add-to-cart").forEach((btn) => {
     btn.addEventListener("click",()=>{
         const productId =btn.dataset.productId;
         let matchingItem;
-        cart.forEach((item)=>{
-            if(productId === item.productId){
-                matchingItem =item;
+        cart.forEach((cartItem)=>{
+            if(productId === cartItem.productId){
+                matchingItem =cartItem;
             }
         });
         if(matchingItem){
@@ -80,11 +76,33 @@ document.querySelectorAll(".add-to-cart").forEach((btn) => {
            
         }
         let cartQuantity =0;
-        cart.forEach((item)=>{
-            cartQuantity += item.quantity;
+        cart.forEach((cartItem)=>{
+            cartQuantity += cartItem.quantity;
         });
         document.querySelector('.cart-quantity').innerHTML =cartQuantity;
         console.log(cartQuantity);
         console.log(cart);
     });
 });
+/*function addToCartButton(event){
+    console.log("button clicked");
+     const productId = event.target.getAttributes("data-product-id");
+    const product=savonProducts.find(product=>product.id=== parseInt(productId));
+    CartProduct(product);
+}
+function CartProduct(product){
+    const cart = JSON.parse(localStorage.getItem("cart"))||[];
+    const existingProduct = cart.find(cartProduct=>cartProduct.id===product.id);
+    if(existingProduct){
+        existingProduct.quantity++;
+    }else{
+        cart.push({...product,quantity:1});
+    }
+    localStorage.setItem("cart",JSON.stringify(cart));
+    window.location.href = 'cart.html';
+};
+document.querySelectorAll("button").addEventListener(("click"),event=>{
+    if(event.target.classList.contains("add-to-cart")){
+        addToCartButton(event);
+    }
+});*/
